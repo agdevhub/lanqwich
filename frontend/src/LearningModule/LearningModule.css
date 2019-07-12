@@ -1,0 +1,22 @@
+.learning-module {
+  background-color: #ffffff;
+}
+
+.learning-module-thumbnail {
+  /* AG: Added this code to remove unnecessary padding on left of module thumbnail. */
+  padding-left: 0px;
+}
+
+.learning-module-card-content {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 40px;
+}
+
+.learning-module-card-content h4 {
+  margin-bottom: 0px;
+}
+
+.learning-module-card-content p {
+  margin-top: 15px;
+}
