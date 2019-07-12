@@ -7,7 +7,10 @@ const LearningUnitSchema = new Schema({
     type: String,
     required: true
   },
-  desc: {
+  content: {
+    type: String
+  },
+  duration: {
     type: String
   },
   module_id: {

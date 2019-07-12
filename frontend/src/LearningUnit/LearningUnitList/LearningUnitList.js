@@ -18,7 +18,7 @@ export default class LearningUnitList extends React.Component {
 
   render() {
     return this.state.learningUnits.map((unit, index) => (
-      <LearningUnit key={index} unitId={unit._id} name={unit.name} desc={unit.desc} />
+      <LearningUnit key={index} unitId={unit._id} name={unit.name} content={unit.content} duration={unit.duration} />
     ));
   }
 }

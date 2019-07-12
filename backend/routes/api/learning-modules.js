@@ -27,6 +27,7 @@ router.get("/:learningModuleId", (req, res) => {
   // refactor Mongoose models
   LearningUnit.find({ module_id: req.params.learningModuleId }).then(units => {
     res.json(units);
+    console.log(units);
   });
 });
 
