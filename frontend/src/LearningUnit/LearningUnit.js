@@ -1,5 +1,6 @@
 import React from "react";
 import "./LearningUnit.css";
+import QuestionList from '../Question/QuestionList/QuestionList'
 
 export default class LearningUnit extends React.Component {
   render() {
@@ -16,6 +17,9 @@ export default class LearningUnit extends React.Component {
               Check Your Anwers
             </button>
           </div>
+        </div>
+        <div className="row">
+          <QuestionList unitId={this.props.unitId} />
         </div>
       </div>
     );
