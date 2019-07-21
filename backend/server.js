@@ -19,6 +19,9 @@ app.use(bodyParser.json());
 app.use("/api/learning-modules", learningmodules);
 app.use("/api/learning-units", learningunits);
 
+var path = require('path');
+app.use(express.static(path.join(__dirname, 'build')))
+
 const port = process.env.PORT | 5000;
 
 app.listen(port, () => console.log("Express server started on port: " + port));
