@@ -20,7 +20,7 @@ app.use("/api/learning-modules", learningmodules);
 app.use("/api/learning-units", learningunits);
 
 var path = require('path');
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 const port = process.env.PORT | 5000;
 
