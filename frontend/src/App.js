@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import LearningModuleList from "./LearningModule/LearningModuleList/LearningModuleList";
 import LearningUnitList from "./LearningUnit/LearningUnitList/LearningUnitList";
