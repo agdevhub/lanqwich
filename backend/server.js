@@ -24,4 +24,4 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 const port = process.env.PORT | 5000;
 
-app.listen(port, () => console.log("Express server started on port: " + port));
+app.listen(port, () => console.log("Express server is running on port " + port + "."));
