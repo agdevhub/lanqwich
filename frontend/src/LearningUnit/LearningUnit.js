@@ -13,14 +13,11 @@ export default class LearningUnit extends React.Component {
             <p>
               {this.props.content}
             </p>
-            <button type="button" class="btn btn-info">
-              Check Your Anwers
-            </button>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <QuestionList unitId={this.props.unitId} />
-        </div>
+        </div> */}
       </div>
     );
   }
