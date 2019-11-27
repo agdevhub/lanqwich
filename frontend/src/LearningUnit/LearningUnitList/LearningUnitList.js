@@ -18,16 +18,19 @@ export default class LearningUnitList extends React.Component {
 
   render() {
     return (
-    <React.Fragment> 
-    <ul className="nav nav-tabs" id="learningUnitTabs" role="tablist">
-        {
-        this.state.learningUnits.map((unit, index) => (
-          <li className="nav-item">
-            <a className={index === 0 ? "nav-link active": "nav-link"} id={"unitTabId-" + unit._id} data-toggle="tab" href={"#unit-" + unit._id} role="tab" aria-controls={"unit-" + unit._id} aria-selected="true">Unit {index}</a>
-          </li>
-        ))
-        }
-    </ul>
+    <div className="container">
+     <div className="row">
+      <ul className="nav nav-tabs" id="learningUnitTabs" role="tablist">
+          {
+          this.state.learningUnits.map((unit, index) => (
+            <li className="nav-item">
+              <a style={{ "border-top-left-radius":"0", "border-top-right-radius": "0" }} className={index === 0 ? "nav-link active": "nav-link"} id={"unitTabId-" + unit._id} data-toggle="tab" href={"#unit-" + unit._id} role="tab" aria-controls={"unit-" + unit._id} aria-selected="true">Unit {index + 1} - {unit.name}</a>
+            </li>
+          ))
+          }
+      </ul>
+     </div>
+    
     <div className="tab-content" id="learningUnitTabContents">
       {
         this.state.learningUnits.map((unit, index) => (
@@ -37,7 +40,7 @@ export default class LearningUnitList extends React.Component {
         ))
         }
     </div>
-    </React.Fragment>
+    </div>
     // this.state.learningUnits.map((unit, index) => (
     //   <LearningUnit key={index} unitId={unit._id} name={unit.name} content={unit.content} duration={unit.duration} />
     // ));
