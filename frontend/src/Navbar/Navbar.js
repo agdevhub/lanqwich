@@ -25,11 +25,11 @@ export default class Navbar extends React.Component {
             id="navbarNavDropdown"
           >
             <ul class="navbar-nav">
-              <li class="nav-item active">
+              {/* <li class="nav-item active">
                 <Link class="nav-link" to="/">
                   Home <span class="sr-only">(current)</span>
                 </Link>
-              </li>
+              </li> */}
               {/* <li class="nav-item">
                 <a class="nav-link" href="#">
                   About
@@ -39,16 +39,16 @@ export default class Navbar extends React.Component {
                 <a class="nav-link" href="#">
                   Contact
                 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Sign in
-                </a>
-              </li> */}
-              <li class="nav-item">
-                <Link className="nav-link" to="/learning-path">
-                  My Learning
+              </li>*/}
+              {/* <li class="nav-item">
+                <Link className="nav-link" to="/tiny-editor">
+                  Tiny Editor
                 </Link>
+              </li>  */}
+              <li class="nav-item active">
+                <Link className="nav-link" to="/learning-path">
+                  My Arabic Journey <span class="sr-only">(current)</span>
+                </Link> 
               </li>
               {/* <li class="nav-item">
                 <a class="nav-link" href="#">

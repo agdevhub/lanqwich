@@ -24,7 +24,7 @@ export default class LearningUnitList extends React.Component {
           {
           this.state.learningUnits.map((unit, index) => (
             <li className="nav-item">
-              <a style={{ "border-top-left-radius":"0", "border-top-right-radius": "0" }} className={index === 0 ? "nav-link active": "nav-link"} id={"unitTabId-" + unit._id} data-toggle="tab" href={"#unit-" + unit._id} role="tab" aria-controls={"unit-" + unit._id} aria-selected="true">Unit {index + 1} - {unit.name}</a>
+              <a style={{ "border-top-left-radius":"0", "border-top-right-radius": "0" }} className={index === 0 ? "nav-link active": "nav-link"} id={"unitTabId-" + unit._id} data-toggle="tab" href={"#unit-" + unit._id} role="tab" aria-controls={"unit-" + unit._id} aria-selected="true">Part {index + 1}. {unit.name}</a>
             </li>
           ))
           }
@@ -35,7 +35,7 @@ export default class LearningUnitList extends React.Component {
       {
         this.state.learningUnits.map((unit, index) => (
           <div className={index === 0 ? "tab-pane fade show active": "tab-pane fade" } id={"unit-" + unit._id} role="tabpanel" aria-labelledby={"unitTabId-" + unit._id}>
-            <LearningUnit key={index} unitId={unit._id} name={unit.name} content={unit.content} duration={unit.duration} />
+            <LearningUnit key={index} unitId={unit._id} name={unit.name} content={unit.content} duration={unit.duration} learningModuleId={this.state.learningModuleId} />
           </div>
         ))
         }

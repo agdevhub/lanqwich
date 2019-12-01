@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 // Create schema
 const LearningUnitSchema = new Schema({
   name: {
-    type: String,
-    required: true
+    type: String
   },
   content: {
     type: String

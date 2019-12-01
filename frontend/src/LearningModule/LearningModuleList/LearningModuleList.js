@@ -17,13 +17,18 @@ export default class LearningModuleList extends React.Component {
   }
 
   render() {
-    return this.state.learningModules.map((module, index) => (
+    return (
+    <div className="container">
+      {
+      this.state.learningModules.map((module, index) => (
       <Module
         key={index}
         learningModuleId={module._id}
         name={module.name}
         desc={module.desc}
       />
-    ));
-  }
+      ))
+      }
+    </div>
+    )}
 }
