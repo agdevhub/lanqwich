@@ -30,16 +30,16 @@ export default class Navbar extends React.Component {
                   Home <span class="sr-only">(current)</span>
                 </Link>
               </li> */}
-              {/* <li class="nav-item">
-                <a class="nav-link" href="#">
-                  About
-                </a>
+              <li class="nav-item">
+                <Link className="nav-link" to="/login">
+                  Log in
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Contact
-                </a>
-              </li>*/}
+                <Link className="nav-link" to="/register">
+                  Sign up
+                </Link>
+              </li>
               {/* <li class="nav-item">
                 <Link className="nav-link" to="/tiny-editor">
                   Tiny Editor
