@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-export default class Navbar extends React.Component {
+class Navbar extends React.Component {
   render() {
     return (
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style={{"margin-bottom":"30px"}}>
@@ -31,12 +33,12 @@ export default class Navbar extends React.Component {
                 </Link>
               </li> */}
               <li class="nav-item">
-                <Link className="nav-link" to="/login">
+                <Link className="nav-link" to="/login" style={{ "display": this.props.auth.isAuthenticated ? "none" : ""}}>
                   Log in
                 </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/register">
+                <Link className="nav-link" to="/register" style={{ "display": this.props.auth.isAuthenticated ? "none" : ""}}>
                   Sign up
                 </Link>
               </li>
@@ -62,3 +64,11 @@ export default class Navbar extends React.Component {
     );
   }
 }
+
+Navbar.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(mapStateToProps, {})(withRouter(Navbar));
