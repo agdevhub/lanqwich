@@ -2,8 +2,16 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import store from "../store";
+import { logoutUser } from '../actions/authActions'
 
 class Navbar extends React.Component {
+  logoutUser() {
+    // Logout user
+    store.dispatch(logoutUser()); // Redirect to login
+    window.location.href = "./login";
+  }
+
   render() {
     return (
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style={{"margin-bottom":"30px"}}>
@@ -51,6 +59,11 @@ class Navbar extends React.Component {
                 <Link className="nav-link" to="/learning-path">
                   My Arabic Journey <span class="sr-only">(current)</span>
                 </Link> 
+              </li>
+              <li class="nav-item">
+                <Link className="nav-link" to="/logout" onClick={this.logoutUser} style={{ "display": this.props.auth.isAuthenticated ? "" : "none"}}>
+                  Log out
+                </Link>
               </li>
               {/* <li class="nav-item">
                 <a class="nav-link" href="#">

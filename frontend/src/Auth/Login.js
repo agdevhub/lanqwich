@@ -4,6 +4,7 @@ import Axios from "axios";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/authActions";
+import "./Auth.css";
 
 class Login extends Component {
   constructor() {
@@ -52,49 +53,43 @@ class Login extends Component {
     const { errors } = this.state;
     return (
       <div className="container">
-        <form noValidate onSubmit={this.onSubmit}>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-              onChange={this.onChange}
-              value={this.state.email}
-              error={errors.email}
-            />
-            <small id="emailHelp" class="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
+        <div className="row justify-content-center">
+          <div className="col-md-5 login-form">
+            <form noValidate onSubmit={this.onSubmit}>
+              <h4 class="text-center" style={{ "margin-bottom": "30px" }}>Sign In</h4>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your email"
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  error={errors.email}
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  placeholder="Your password"
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                />
+              </div>
+              <button type="submit" class="btn btn-success btn-block">
+                Log In
+              </button>
+              <hr />
+              <p class="text-center">Or</p>
+              <Link to="/register" class="btn btn-info btn-block">
+                Register
+              </Link>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-              class="form-control"
-              placeholder="Enter password"
-              onChange={this.onChange}
-              value={this.state.password}
-              error={errors.password}
-              id="password"
-              type="password"
-            />
-          </div>
-          <div class="form-group form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label" for="exampleCheck1">
-              Check me out
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">
-            Submit
-          </button>
-        </form>
+        </div>
       </div>
     );
   }
