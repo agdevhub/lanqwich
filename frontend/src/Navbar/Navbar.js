@@ -41,6 +41,11 @@ class Navbar extends React.Component {
                 </Link>
               </li> */}
               <li class="nav-item">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li class="nav-item">
                 <Link className="nav-link" to="/login" style={{ "display": this.props.auth.isAuthenticated ? "none" : ""}}>
                   Log in
                 </Link>

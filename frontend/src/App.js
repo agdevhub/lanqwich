@@ -46,7 +46,7 @@ export default class App extends React.Component {
               component={LearningUnitList}
             />
             <Route path="/tiny-editor/:learningUnitId" component={TinyEditor} />
-            <Redirect exact from="/" to="/learning-path" />
+            <Redirect exact from="/" to="/" />
           </Switch>
         </React.Fragment>
       </Provider>
