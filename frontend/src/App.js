@@ -13,6 +13,8 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./private-route/PrivateRoute";
+import Landing from "./Landing/Landing";
+import Footer from "./Footer/Footer";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -40,13 +42,17 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <PrivateRoute exact path="/learning-path" component={LearningModuleList} />
+            <PrivateRoute
+              exact
+              path="/learning-path"
+              component={LearningModuleList}
+            />
             <Route
               path="/learning-module/:learningModuleId"
               component={LearningUnitList}
             />
             <Route path="/tiny-editor/:learningUnitId" component={TinyEditor} />
-            <Redirect exact from="/" to="/" />
+            <Route exact path="/" component={Landing} />
           </Switch>
         </React.Fragment>
       </Provider>

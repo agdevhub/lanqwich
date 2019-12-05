@@ -3,7 +3,8 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import store from "../store";
-import { logoutUser } from '../actions/authActions'
+import { logoutUser } from "../actions/authActions";
+import "./Navbar.css";
 
 class Navbar extends React.Component {
   logoutUser() {
@@ -14,7 +15,10 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style={{"margin-bottom":"30px"}}>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top"
+        style={{ "margin-bottom": "30px" }}
+      >
         <div className="container">
           <Link class="navbar-brand" to="/">
             Lanqwich
@@ -46,12 +50,24 @@ class Navbar extends React.Component {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/login" style={{ "display": this.props.auth.isAuthenticated ? "none" : ""}}>
+                <Link
+                  className="nav-link"
+                  to="/login"
+                  style={{
+                    display: this.props.auth.isAuthenticated ? "none" : ""
+                  }}
+                >
                   Log in
                 </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/register" style={{ "display": this.props.auth.isAuthenticated ? "none" : ""}}>
+                <Link
+                  className="nav-link"
+                  to="/register"
+                  style={{
+                    display: this.props.auth.isAuthenticated ? "none" : ""
+                  }}
+                >
                   Sign up
                 </Link>
               </li>
@@ -63,10 +79,17 @@ class Navbar extends React.Component {
               <li class="nav-item active">
                 <Link className="nav-link" to="/learning-path">
                   My Arabic Journey <span class="sr-only">(current)</span>
-                </Link> 
+                </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link" to="/logout" onClick={this.logoutUser} style={{ "display": this.props.auth.isAuthenticated ? "" : "none"}}>
+                <Link
+                  className="nav-link"
+                  to="/logout"
+                  onClick={this.logoutUser}
+                  style={{
+                    display: this.props.auth.isAuthenticated ? "" : "none"
+                  }}
+                >
                   Log out
                 </Link>
               </li>
