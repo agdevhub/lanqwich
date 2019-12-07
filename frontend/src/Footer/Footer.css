@@ -1,4 +1,13 @@
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  background-color: #27ACAA;
+}
+
+.footer li a  {
+  color: #fff;
+}
+
+.footer p {
+  color: #EAEAF2;
 }

@@ -7,7 +7,7 @@ import { faFacebook, faTwitterSquare, faInstagram, faTwitter } from '@fortawesom
 export default class Footer extends React.Component {
   render() {
     return (
-      <footer class="footer bg-light">
+      <footer class="footer">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
@@ -28,7 +28,7 @@ export default class Footer extends React.Component {
                   <a href="#">Privacy Policy</a>
                 </li>
               </ul>
-              <p class="text-muted small mb-4 mb-lg-0">
+              <p class="small mb-4 mb-lg-0">
                 &copy; Lanqwich 2019. All Rights Reserved.
               </p>
             </div>
