@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { NavLink, Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import store from "../store";
@@ -7,11 +7,24 @@ import { logoutUser } from "../actions/authActions";
 import "./Navbar.css";
 
 class Navbar extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      activeMenu: ""
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   logoutUser() {
     // Logout user
     store.dispatch(logoutUser()); // Redirect to login
     window.location.href = "./login";
   }
+
+  handleClick = e => {
+    this.setState({ activeMenu: e.target.id });
+    console.log(e.target.id);
+  };
 
   render() {
     return (
@@ -39,49 +52,52 @@ class Navbar extends React.Component {
             id="navbarNavDropdown"
           >
             <ul class="navbar-nav">
-              {/* <li class="nav-item active">
-                <Link class="nav-link" to="/">
-                  Home <span class="sr-only">(current)</span>
-                </Link>
-              </li> */}
-              <li class="nav-item">
-                <Link className="nav-link" to="/">
+              <li className="nav-item">
+                <NavLink
+                  exact
+                  className="nav-link"
+                  to="/"
+                  activeClassName="active"
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
-              <li class="nav-item">
-                <Link
+              <li className="nav-item">
+                <NavLink
+                  exact
                   className="nav-link"
                   to="/login"
+                  activeClassName="active"
                   style={{
                     display: this.props.auth.isAuthenticated ? "none" : ""
                   }}
                 >
                   Log in
-                </Link>
+                </NavLink>
               </li>
-              <li class="nav-item">
-                <Link
+              <li className="nav-item">
+                <NavLink
+                  exact
                   className="nav-link"
                   to="/register"
+                  activeClassName="active"
                   style={{
                     display: this.props.auth.isAuthenticated ? "none" : ""
                   }}
                 >
                   Sign up
-                </Link>
+                </NavLink>
               </li>
-              {/* <li class="nav-item">
-                <Link className="nav-link" to="/tiny-editor">
-                  Tiny Editor
-                </Link>
-              </li>  */}
-              <li class="nav-item active">
-                <Link className="nav-link" to="/learning-path">
-                  My Arabic Journey <span class="sr-only">(current)</span>
-                </Link>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link"
+                  to="/arabic"
+                  activeClassName="active"
+                >
+                  My Arabic Journey
+                </NavLink>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   className="nav-link"
                   to="/logout"
@@ -93,11 +109,6 @@ class Navbar extends React.Component {
                   Log out
                 </Link>
               </li>
-              {/* <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Sign out
-                </a>
-              </li> */}
             </ul>
           </div>
         </div>
@@ -112,4 +123,6 @@ Navbar.propTypes = {
 const mapStateToProps = state => ({
   auth: state.auth
 });
-export default connect(mapStateToProps, {})(withRouter(Navbar));
+export default connect(mapStateToProps, null, null, {
+  pure: false // learn more about this
+})(withRouter(Navbar));

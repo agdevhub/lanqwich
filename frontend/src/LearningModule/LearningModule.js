@@ -16,7 +16,7 @@ export default class Module extends React.Component {
               <h5 class="card-title">{this.props.name}</h5>
               <p class="card-text">{this.props.desc}</p>
               {/* <p class="card-text"><small class="text-muted">Sample text here</small></p> */}
-              <Link className="btn btn-outline-info" to={`/learning-module/${this.props.learningModuleId}`}>Get Started</Link>
+              <Link className="btn btn-outline-info" to={`/arabic/module/${this.props.learningModuleId}`}>Get Started</Link>
             </div>
           </div>
         </div>

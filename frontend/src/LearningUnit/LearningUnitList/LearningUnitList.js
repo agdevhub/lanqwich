@@ -6,6 +6,7 @@ import Footer from '../../Footer/Footer';
 export default class LearningUnitList extends React.Component {
   constructor(props) {
     super(props);
+    console.log('getting unitlist here');
     this.state = {
       learningUnits: [],
       learningModuleId: props.match.params.learningModuleId
@@ -17,6 +18,7 @@ export default class LearningUnitList extends React.Component {
       `/api/learning-modules/${this.state.learningModuleId}`
     );
     this.setState({ learningUnits: response.data });
+    console.log('Units are here: ' + response.data);
   }
 
   render() {

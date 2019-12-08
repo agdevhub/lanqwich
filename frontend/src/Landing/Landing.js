@@ -4,23 +4,24 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import store from "../store";
 import "./Landing.css";
-import sampleImg from "../images/sample/arabic-letters.jpg";
-import sampleImg2 from "../images/sample/fundamentals.jpg";
-import sampleImg3 from "../images/sample/sunrise.jpg";
+import sampleImg1 from "../images/sample/seeding.jpg";
+import sampleImg2 from "../images/sample/growth.jpg";
+import sampleImg3 from "../images/sample/blossom.jpg";
 import Footer from '../Footer/Footer';
 
 class Landing extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <header class="masthead text-center text-white">
+        <header class="masthead text-left text-white">
           <div class="masthead-content">
             <div class="container">
-              <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-              <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-              <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">
-                Learn More
-              </a>
+              <h2 class="masthead-heading mb-2">One Page Wonder</h2>
+              <h2 class="masthead-subheading mb-4">Will Rock Your Socks Off</h2>
+              <p class="masthead-text">Lorem ipsum dolor, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem.</p>
+              <Link to="/arabic" class="btn btn-primary btn-xl rounded-pill mt-4">
+                Start Here!
+              </Link>
             </div>
           </div>
           <div class="bg-circle-1 bg-circle"></div>
@@ -35,7 +36,7 @@ class Landing extends React.Component {
                 <div class="p-5">
                   <img
                     class="img-fluid rounded-circle"
-                    src={sampleImg2}
+                    src={sampleImg1}
                     alt=""
                   />
                 </div>
@@ -61,7 +62,7 @@ class Landing extends React.Component {
                 <div class="p-5">
                   <img
                     class="img-fluid rounded-circle"
-                    src={sampleImg3}
+                    src={sampleImg2}
                     alt=""
                   />
                 </div>
@@ -87,7 +88,7 @@ class Landing extends React.Component {
                 <div class="p-5">
                   <img
                     class="img-fluid rounded-circle"
-                    src={sampleImg}
+                    src={sampleImg3}
                     alt=""
                   />
                 </div>

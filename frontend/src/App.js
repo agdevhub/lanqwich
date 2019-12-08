@@ -44,11 +44,11 @@ export default class App extends React.Component {
             <Route exact path="/login" component={Login} />
             <PrivateRoute
               exact
-              path="/learning-path"
+              path="/arabic"
               component={LearningModuleList}
             />
             <Route
-              path="/learning-module/:learningModuleId"
+              path="/arabic/module/:learningModuleId"
               component={LearningUnitList}
             />
             <Route path="/tiny-editor/:learningUnitId" component={TinyEditor} />
