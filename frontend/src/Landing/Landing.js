@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import store from "../store";
 import "./Landing.css";
-import sampleImg1 from "../images/sample/seeding.jpg";
-import sampleImg2 from "../images/sample/growth.jpg";
-import sampleImg3 from "../images/sample/blossom.jpg";
+import sampleImg1 from "../assets/images/module-1.jpg";
+import sampleImg2 from "../assets/images/module-2.jpg";
+import sampleImg3 from "../assets/images/module-3.jpg";
 import Footer from '../Footer/Footer';
 
 class Landing extends React.Component {
@@ -32,7 +32,7 @@ class Landing extends React.Component {
         <section>
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-lg-5 order-lg-2">
+              <div class="col-lg-4 order-lg-2">
                 <div class="p-5">
                   <img
                     class="img-fluid rounded-circle"
@@ -58,7 +58,7 @@ class Landing extends React.Component {
         <section>
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-lg-5">
+              <div class="col-lg-4">
                 <div class="p-5">
                   <img
                     class="img-fluid rounded-circle"
@@ -84,7 +84,7 @@ class Landing extends React.Component {
         <section>
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-lg-5 order-lg-2">
+              <div class="col-lg-4 order-lg-2">
                 <div class="p-5">
                   <img
                     class="img-fluid rounded-circle"

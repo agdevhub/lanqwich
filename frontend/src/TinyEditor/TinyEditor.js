@@ -38,7 +38,7 @@ class TinyEditor extends React.Component {
       <div className="container">
         <Link
           className="btn btn-outline-info"
-          to={{ pathname: `/learning-module/${this.state.learningModuleId}` }}
+          to={{ pathname: `/arabic/module/${this.state.learningModuleId}` }}
         >
           Back to Module
         </Link>

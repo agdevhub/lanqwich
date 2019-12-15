@@ -9,28 +9,26 @@ export default class LearningUnit extends React.Component {
   }
   render() {
     return (
-      <div className="row learning-unit">
-        <div className="col">
-          <h3>{this.props.name}</h3>
-          <br />
-          {/* <p>{this.props.duration}</p> */}
-          <p id={"unitContent" + this.props.unitId}>
-            <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
-          </p>
-          <Link
-            className="btn btn-outline-info"
-            to={{
-              pathname: `/tiny-editor/${this.props.unitId}`,
-              state: {
-                learningUnitContent: this.props.content,
-                learningModuleId: this.props.learningModuleId
-              }
-            }}
-          >
-            Edit in Tiny
-          </Link>
-        </div>
-      </div>
+      <React.Fragment>
+        <h3>{this.props.name}</h3>
+        <br />
+        {/* <p>{this.props.duration}</p> */}
+        <p id={"unitContent" + this.props.unitId}>
+          <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
+        </p>
+        <Link
+          className="btn btn-outline-info"
+          to={{
+            pathname: `/tiny-editor/${this.props.unitId}`,
+            state: {
+              learningUnitContent: this.props.content,
+              learningModuleId: this.props.learningModuleId
+            }
+          }}
+        >
+          Edit in Tiny
+        </Link>
+      </React.Fragment>
     );
   }
 }

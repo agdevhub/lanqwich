@@ -7,6 +7,13 @@ const LearningModuleSchema = new Schema({
     type: String,
     required: true
   },
+  rank: {
+    type: Number,
+    required: true
+  },
+  imgName: {
+    type: String
+  },
   desc: {
     type: String
   }

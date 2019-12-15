@@ -90,14 +90,14 @@ header.masthead .bg-circle-4 {
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
-  background-color: #F3E367;
-  border-color: #F3E367;
+  background-color: #f6f85e;
+  border-color: #f6f85e;
   color: #666;
 }
 
 .btn-xl:active, .btn-xl:focus, .btn-xl:hover {
-    background-color: #dee04f !important;
-    border-color: #dee04f !important;
+    background-color: #F3E367 !important;
+    border-color: #F3E367 !important;
     color: #666;
   }
 

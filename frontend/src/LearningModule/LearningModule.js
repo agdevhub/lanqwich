@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SampleImg from "../images/sample/arabic-letters.jpg";
 import "./LearningModule.css"
 
 export default class Module extends React.Component {
@@ -9,7 +8,7 @@ export default class Module extends React.Component {
       <div class="card mb-3 learning-module">
         <div class="row no-gutters">
           <div class="col-md-2">
-            <img src={SampleImg} className="card-img" alt="..." />
+            <img src={require(`../assets/images/${this.props.imgName}`)} className="card-img" style={{"border-radius": "0"}} alt="..." />
           </div>
           <div class="col-md-10">
             <div class="card-body">

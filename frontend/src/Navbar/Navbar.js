@@ -18,7 +18,7 @@ class Navbar extends React.Component {
   logoutUser() {
     // Logout user
     store.dispatch(logoutUser()); // Redirect to login
-    window.location.href = "./login";
+    window.location.href = "/";
   }
 
   handleClick = e => {
