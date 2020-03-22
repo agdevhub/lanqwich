@@ -40,7 +40,7 @@ router.get("/:learningUnitId", async (req, res) => {
     //question = { ...question, answers: answers };
     var temp_question = Object.assign({}, question._doc);
     temp_question.answers = answers;
-    console.log(temp_question);
+    //console.log(temp_question);
     return temp_question;
   });
   res.json(await Promise.all(qs));

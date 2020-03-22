@@ -28,9 +28,9 @@ router.post("/", (req, res) => {
   //   res.json(unit);
   //   console.log(units);
   // });
-  console.log('I am here ' + req.query.learningUnitId + ' ' + req.query.tinyContent);
+  //console.log('I am here ' + req.query.learningUnitId + ' ' + req.query.tinyContent);
   LearningUnit.updateOne({_id: req.query.learningUnitId}, {content: req.query.tinyContent}, function(err, user) {
-    console.log(err)
+    //console.log(err)
   });
   res.json('gelede');
 });

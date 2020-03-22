@@ -14,6 +14,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./private-route/PrivateRoute";
 import Landing from "./Landing/Landing";
+import LearningUnit from "./LearningUnit/LearningUnit";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -42,9 +43,13 @@ export default class App extends React.Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/arabic" component={LearningModuleList} />
-            <Route
-              path="/arabic/module/:learningModuleId"
+            <Route exact
+              path="/arabic/modules/:learningModuleId"
               component={LearningUnitList}
+            />
+            <Route exact
+              path="/arabic/modules/:learningModuleSlug/units/:learningUnitSlug"
+              component={LearningUnit}
             />
             <Route path="/tiny-editor/:learningUnitId" component={TinyEditor} />
             <Route exact path="/" component={Landing} />

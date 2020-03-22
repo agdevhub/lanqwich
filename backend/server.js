@@ -8,6 +8,7 @@ const users = require("./routes/api/users");
 const learningmodules = require("./routes/api/learning-modules");
 const learningunits = require("./routes/api/learning-units");
 const questions = require("./routes/api/questions");
+const learning = require("./routes/api/learning");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 app.use("/api/learning-modules", learningmodules);
 app.use("/api/learning-units", learningunits);
 app.use("/api/questions", questions);
+app.use("/api/learning", learning);
 
 // Passport middleware
 app.use(passport.initialize()); // Passport config
@@ -35,5 +37,5 @@ app.use(express.static(path.join(__dirname, "public")));
 const port = process.env.PORT | 5000;
 
 app.listen(port, () =>
-  console.log("Express server is running on port " + port + ".")
+  {}//console.log("Express server is running on port " + port + ".")
 );

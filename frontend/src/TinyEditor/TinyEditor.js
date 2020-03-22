@@ -13,23 +13,23 @@ class TinyEditor extends React.Component {
       learningModuleId: props.location.state.learningModuleId
     };
     this.saveUnit = this.saveUnit.bind(this);
-    console.log("Learning Unit" + this.state.learningUnitId);
-    console.log("Learning Unit" + this.state.learningUnitContent);
+    //console.log("Learning Unit" + this.state.learningUnitId);
+    //console.log("Learning Unit" + this.state.learningUnitContent);
   }
 
   async saveUnit() {
     const learningUnitId = this.state.learningUnitId;
     const tinyContent = this.state.tinyContent;
 
-    console.log("ok so far");
+    //("ok so far");
     //const response = await Axios.post(`/api/learning-units/${learningUnitId}`);
     const response = await Axios.post("/api/learning-units", null, {
       params: { learningUnitId, tinyContent }
     });
-    console.log(response.data);
+    //console.log(response.data);
   }
   handleEditorChange = e => {
-    console.log("Content was updated:", e.target.getContent());
+    //console.log("Content was updated:", e.target.getContent());
     this.setState({ tinyContent: e.target.getContent() });
   };
 

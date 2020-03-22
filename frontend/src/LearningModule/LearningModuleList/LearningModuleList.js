@@ -15,7 +15,7 @@ export default class LearningModuleList extends React.Component {
   async componentDidMount() {
     const response = await Axios.get("api/learning-modules");
     this.setState({ learningModules: response.data });
-    console.log(this.state.learningModules);
+    //console.log(this.state.learningModules);
   }
 
   render() {

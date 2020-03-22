@@ -46,10 +46,10 @@ class Register extends Component {
 
     this.props.registerUser(newUser, this.props.history);
 
-    console.log(newUser);
+    //console.log(newUser);
 
     const res = await Axios.post(`/api/users/register`, newUser);
-    console.log(res.data);
+    //console.log(res.data);
   };
   render() {
     const { errors } = this.state;

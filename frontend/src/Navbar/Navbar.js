@@ -23,7 +23,7 @@ class Navbar extends React.Component {
 
   handleClick = e => {
     this.setState({ activeMenu: e.target.id });
-    console.log(e.target.id);
+    //console.log(e.target.id);
   };
 
   render() {
