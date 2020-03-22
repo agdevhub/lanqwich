@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Navbar from "./Navbar/Navbar";
+import Header from "./components/Header/Header";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import LearningModuleList from "./LearningModule/LearningModuleList/LearningModuleList";
@@ -15,6 +15,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./private-route/PrivateRoute";
 import Landing from "./Landing/Landing";
 import LearningUnit from "./LearningUnit/LearningUnit";
+import LearningLanding from "./components/LearningLanding/LearningLanding";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -38,21 +39,27 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <React.Fragment>
-          <Navbar />
+          <Header />
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <PrivateRoute exact path="/arabic" component={LearningModuleList} />
-            <Route exact
+            <Route exact path="/arabic" component={LearningLanding} />
+
+            <Route
+              exact
               path="/arabic/modules/:learningModuleId"
               component={LearningUnitList}
             />
-            <Route exact
+            <Route
+              exact
               path="/arabic/modules/:learningModuleSlug/units/:learningUnitSlug"
               component={LearningUnit}
             />
             <Route path="/tiny-editor/:learningUnitId" component={TinyEditor} />
             <Route exact path="/" component={Landing} />
+
+            {/* Private Routes That Require Login */}
+            {/* <PrivateRoute exact path="/arabic" component={LearningLanding} /> */}
           </Switch>
         </React.Fragment>
       </Provider>
